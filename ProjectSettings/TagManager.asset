@@ -5,7 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+<<<<<<< HEAD
   - passerby
+=======
+  - Node
+  - Shop
+  - TransparentFX
+>>>>>>> parent of 03df0c4... Merge pull request #4 from Frank-Zou/master
   layers:
   - Default
   - TransparentFX
