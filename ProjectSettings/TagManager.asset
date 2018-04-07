@@ -9,6 +9,10 @@ TagManager:
   - Shop
   - TransparentFX
   - position
+<<<<<<< HEAD
+=======
+  - passerby
+>>>>>>> development
   layers:
   - Default
   - TransparentFX
