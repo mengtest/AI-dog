@@ -11,6 +11,9 @@ TagManager:
   - Node
   - Shop
   - TransparentFX
+<<<<<<< HEAD
+>>>>>>> parent of 03df0c4... Merge pull request #4 from Frank-Zou/master
+=======
 >>>>>>> parent of 03df0c4... Merge pull request #4 from Frank-Zou/master
   layers:
   - Default
