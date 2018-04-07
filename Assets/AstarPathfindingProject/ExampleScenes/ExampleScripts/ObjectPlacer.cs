@@ -31,14 +31,17 @@ namespace Pathfinding.Examples {
 		}
 
 		public void PlaceObject (GameObject go) {
+            if(go==this.go)
+            {
+                if (GameObject.Find(Tags.enemy) != null) return;
+            }
+            
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
-
 			// Figure out where the ground is
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity)) {
 				Vector3 p = hit.point;
 				GameObject obj = GameObject.Instantiate(go, p, Quaternion.identity) as GameObject;
-
 				if (issueGUOs) {
                     //只有是障碍物才会更新
                     if (obj.tag == Tags.wall)

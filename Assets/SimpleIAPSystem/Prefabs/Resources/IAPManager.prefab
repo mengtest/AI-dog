@@ -51,7 +51,7 @@ MonoBehaviour:
     - id: bag
       type: 0
       title: "NIKE \u767B\u5C71\u5305"
-      description: "NIKE \u767B\u5C71\u5305"
+      description: "NIKE \u767B\u5C71\u5305             \u6765\u81EANike\u65D7\u8230\u5E97"
       realPrice: 
       fetch: 0
       icon: {fileID: 21300000, guid: c15599ff72e1be643906cc653bfa5878, type: 3}
@@ -68,8 +68,8 @@ MonoBehaviour:
       platformFoldout: 0
     - id: hat
       type: 0
-      title: "NIKE \u5E3D\u5B50"
-      description: "Nike \u5E3D\u5B50"
+      title: "\u592A\u9633\u5E3D"
+      description: " \u5E3D\u5B50                    \u6765\u81EAJsd\u5168\u7403\u8FDE\u9501\u4FBF\u5229\u5E97"
       realPrice: 
       fetch: 0
       icon: {fileID: 21300000, guid: 56bebea273381ad4d8bbd417791dc4de, type: 3}

@@ -8,6 +8,8 @@ TagManager:
   - Node
   - Shop
   - TransparentFX
+  - position
+  - passerby
   layers:
   - Default
   - TransparentFX
