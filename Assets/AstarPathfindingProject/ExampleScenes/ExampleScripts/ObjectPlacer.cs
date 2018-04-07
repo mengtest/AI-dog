@@ -82,13 +82,13 @@ namespace Pathfinding.Examples {
 				Destroy(hit.collider);
 				Destroy(hit.collider.gameObject);
 
-				if (issueGUOs) {
-					GraphUpdateObject guo = new GraphUpdateObject(b);
-					AstarPath.active.UpdateGraphs(guo);
-					if (direct) {
-						AstarPath.active.FlushGraphUpdates();
-					}
-				}
+				//if (issueGUOs) {
+				//	GraphUpdateObject guo = new GraphUpdateObject(b);
+				//	AstarPath.active.UpdateGraphs(guo);
+				//	if (direct) {
+				//		AstarPath.active.FlushGraphUpdates();
+				//	}
+				//}
 			}
 		}
 	}

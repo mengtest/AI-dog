@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BarkState : FSMState {
+    GameObject enemy;
     public BarkState(FSMSystem fsm) : base(fsm)
     {
         stateID = StateID.Bark;
-       
     }
 
     public override void Act(GameObject npc)
     {
         AnimationExcuting.instance.anim.SetBool("Bark", true);
         AnimationExcuting.instance.anim.SetBool("Walk", false);
+      
     }
 
     public override void Reason(GameObject npc)

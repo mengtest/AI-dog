@@ -35,10 +35,10 @@ public class PatrolState:FSMState {
     {  //2018/3/31/15:57 通过限制canMove和canSearch来解决巡逻时速度剧增的问题
         DogAI.instance.canMove = false;
         DogAI.instance.canSearch = false;
-        CameraController.Instance.SetCamera(new Vector3(6f, 47f, 95f));
-        npc.transform.LookAt(path[index].position);
+        CameraController.Instance.SetCamera(new Vector3(6f, 47f, 95f));  
         Vector3 offset = path[index].transform.position;
         offset.y = npc.transform.position.y;
+        npc.transform.LookAt(path[index].position);
         npc.transform.Translate(Vector3.forward * Time.deltaTime * 10);
         AnimationExcuting.instance.anim.SetBool("Walk", true);
         AnimationExcuting.instance.anim.SetBool("Bark", false);
