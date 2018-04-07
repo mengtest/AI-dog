@@ -10,6 +10,8 @@ public class SleepState :FSMState {
     }
     public override void Act(GameObject npc)
     {
+        GameObject.Find("UICanvas").transform.Find("view_button").gameObject.SetActive(false);
+
         AnimationExcuting.instance.anim.SetBool("Sleep", true);
     }
 

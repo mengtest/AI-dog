@@ -12,7 +12,7 @@ public class GoOutState : FSMState
     public override void Act(GameObject npc)
     {
         // 恢复AStar AI
-   
+        GameObject.Find("UICanvas").transform.Find("view_button").gameObject.SetActive(true);
         EnviromentManager.instance.ChangeDirectlight(0.4f);
         DogAI.instance.canMove = true;
         DogAI.instance.canSearch = true;

@@ -31,9 +31,20 @@ namespace Pathfinding.Examples {
 		}
 
 		public void PlaceObject (GameObject go) {
-            if(go==this.go)
+            //室内敌人只允许生成一个
+            if(go.tag==Tags.enemy)
             {
-                if (GameObject.Find(Tags.enemy) != null) return;
+                if (GameObject.FindGameObjectWithTag(Tags.enemy) != null)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                if(GameObject.Find("Main Camera").GetComponent<AstarSmoothFollow2>().enabled==false)
+                {
+                    return;
+                }
             }
             
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

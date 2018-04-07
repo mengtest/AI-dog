@@ -28,4 +28,11 @@ public class View : MonoBehaviour {
         yield return new WaitForSeconds(0.75f);
         this.gameObject.SetActive(false);
     }
+    void Update()
+    {
+        if (GameObject.Find("UICanvas").transform.Find("view_button").gameObject.activeInHierarchy==false)
+        {
+            TransformState();
+        }
+    }
 }

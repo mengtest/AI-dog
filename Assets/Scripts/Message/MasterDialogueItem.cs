@@ -83,7 +83,7 @@ public class MasterDialogueItem : MonoBehaviour {
     {
         yield return new WaitForSeconds(1.0f);
         //TODO 巡逻
-        InstantiatePetMessage("好的，我将保证没有一致苍蝇");
+        InstantiatePetMessage("好的，我将保证没有一只苍蝇");
     }
     IEnumerator Shopping()
     {

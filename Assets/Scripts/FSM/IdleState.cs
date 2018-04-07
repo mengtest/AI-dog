@@ -12,6 +12,7 @@ public class IdleState:FSMState {
     }
     public override void Act(GameObject npc)
     {
+        GameObject.Find("UICanvas").transform.Find("view_button").gameObject.SetActive(false);
         followScript.distance = 11;
         followScript.horzintal = 0;
         DogPackage.instance.ShowPackage(false);
