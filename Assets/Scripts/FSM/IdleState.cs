@@ -5,10 +5,12 @@ using Pathfinding.Examples;
 public class IdleState:FSMState {
     public bool isCanPatrol = false;
     public AstarSmoothFollow2 followScript;
+   
     public  IdleState(FSMSystem fsm):base(fsm)
     {
         stateID = StateID.Idle;
         followScript = GameObject.Find("Main Camera").GetComponent<AstarSmoothFollow2>();
+         
     }
     public override void Act(GameObject npc)
     {

@@ -107,6 +107,7 @@ namespace Pathfinding.Examples
         }
         public void ThirdView()
         {
+            TransformState.instance.PlayButtonClip();
             isbanLineCast = false;
            height = 40.0f;
             dogRender.enabled = true;
@@ -114,6 +115,7 @@ namespace Pathfinding.Examples
         }
         public void FirstView()
         {
+            TransformState.instance.PlayButtonClip();
             isFirstView = true;
             isbanLineCast = true;
             height = 0;
@@ -122,6 +124,7 @@ namespace Pathfinding.Examples
         }
         public void StatelliteView()
         {
+          TransformState.instance.PlayButtonClip();
             isbanLineCast = true;
            height = 600.0f;
             dogRender.enabled = true;

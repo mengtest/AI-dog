@@ -9,6 +9,9 @@ public class InputManager : MonoBehaviour {
     private Text inputMessage;
     public RectTransform vertical;
     public RectTransform scrollView;
+    public AudioSource infomationSource;
+    public AudioClip sendinfomation;
+    public AudioClip receiveinfomation;
     void Awake()
     {
         instance = this;
@@ -21,6 +24,7 @@ public class InputManager : MonoBehaviour {
   public void SendMessageClick()
     {
         if (inputMessage.text == "") return;
+        infomationSource.PlayOneShot(sendinfomation);
         GameObject master_message = GameObject.Instantiate(masterMessage);
         master_message.transform.SetParent(VerticalLayout);
         master_message.transform.Find("message_text").gameObject.GetComponent<Text>().text = inputMessage.text;
@@ -29,7 +33,7 @@ public class InputManager : MonoBehaviour {
         {
             vertical.localPosition = new Vector3(vertical.localPosition.x, vertical.sizeDelta.y, 0);
         }
-
+        StartCoroutine(PlayReceiver());
     }
     void Update()
     {
@@ -38,6 +42,10 @@ public class InputManager : MonoBehaviour {
             SendMessageClick();
         }
     }
-    
+    IEnumerator PlayReceiver()
+    {
+        yield return new WaitForSeconds(1.0f);
+        infomationSource.PlayOneShot(receiveinfomation);
+    }
  
 }

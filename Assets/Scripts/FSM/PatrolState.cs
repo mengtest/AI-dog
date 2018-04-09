@@ -5,7 +5,7 @@ using UnityEngine;
 public class PatrolState:FSMState {
 
     private List<Transform> path = new List<Transform>();
-    private int index = 0;
+     public int index = 0;
     private Transform playerTransform;
    
     [Header("指定初始位置")]
@@ -33,6 +33,7 @@ public class PatrolState:FSMState {
 
     public override void Act(GameObject npc)
     {  //2018/3/31/15:57 通过限制canMove和canSearch来解决巡逻时速度剧增的问题
+        AnimationExcuting.instance.dogSound.enabled = false;
         DogAI.instance.canMove = false;
         DogAI.instance.canSearch = false;
         CameraController.Instance.SetCamera(new Vector3(6f, 47f, 95f));  
@@ -51,7 +52,8 @@ public class PatrolState:FSMState {
     }
 
     public override void Reason(GameObject npc)
-    {  
+    {
+      
         string keycode = Message.instance.GetKeyCodes();
         switch(keycode)
         {
@@ -72,6 +74,7 @@ public class PatrolState:FSMState {
     }
   void  ComebackInitalPosition(float speed=3)
     {
+        index = 0;
         Debug.Log("speed::" + speed);
         while (Vector3.Distance(GameObject.FindGameObjectWithTag(Tags.player).transform.position, initalPosition.position) > 1.0f)
         {

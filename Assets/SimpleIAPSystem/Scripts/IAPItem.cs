@@ -250,7 +250,8 @@ namespace SIS
         /// </summary>
         public void Purchase()
         {
-			IAPManager.PurchaseProduct(this.productId);
+            TransformState.instance.PlayButtonClip();
+            IAPManager.PurchaseProduct(this.productId);
 		
             //hide buy button once a purchase was made
             //only when an additional buy trigger was set

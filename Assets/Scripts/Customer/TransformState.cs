@@ -7,6 +7,8 @@ public class TransformState : MonoBehaviour {
     private bool isShowShoppingMall = false;
     public static TransformState instance;
     public GameObject minimap;
+    public AudioClip button;
+    public AudioSource audiosource;
     void Awake()
     {
         instance = this;
@@ -19,17 +21,20 @@ public class TransformState : MonoBehaviour {
 	public void MessageButtonClick()
     {
         Message.instance.TransformState();
-
+        PlayButtonClip();
     }
     public void ShoppingState()
     {
-        if(isShowShoppingMall)
+    
+        if (isShowShoppingMall)
         {
+            TransformState.instance.PlayButtonClip();
             isShowShoppingMall = false;
             GameObject.Find("UICanvas").transform.Find("ShoppingMall").gameObject.SetActive(false);
         }
         else
         {
+            TransformState.instance.PlayButtonClip();
             isShowShoppingMall = true;
             GameObject.Find("UICanvas").transform.Find("ShoppingMall").gameObject.SetActive(true);
         }
@@ -47,5 +52,10 @@ public class TransformState : MonoBehaviour {
     public void ShowViewState()
     {
         GameObject.Find("UICanvas").transform.Find("ViewButton").gameObject.GetComponent<View>().TransformState();
+        PlayButtonClip();
+    }
+    public void PlayButtonClip()
+    {
+        this.audiosource.PlayOneShot(button);
     }
 }
