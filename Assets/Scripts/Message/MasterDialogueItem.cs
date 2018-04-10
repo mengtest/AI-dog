@@ -49,15 +49,20 @@ public class MasterDialogueItem : MonoBehaviour {
                StartCoroutine(StartUp());
                 break;
             case "巡逻":
+            case "看家":
+            case "出门":
+            case "看下家":
                 StartCoroutine(Trail());
                 break;
             case "超市":
+            case "买":
                 StartCoroutine(Shopping());
                 Debug.Log("超市");
                 break;
             case "再见":
             case "关闭":
             case "拜拜":
+            case "关机":
                 StartCoroutine(SwitchClosing());
                 break;
             case "过来":
