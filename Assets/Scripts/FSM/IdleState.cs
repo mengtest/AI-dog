@@ -5,10 +5,12 @@ using Pathfinding.Examples;
 public class IdleState:FSMState {
     public bool isCanPatrol = false;
     public AstarSmoothFollow2 followScript;
+   
     public  IdleState(FSMSystem fsm):base(fsm)
     {
         stateID = StateID.Idle;
         followScript = GameObject.Find("Main Camera").GetComponent<AstarSmoothFollow2>();
+         
     }
     public override void Act(GameObject npc)
     {
@@ -40,11 +42,15 @@ public class IdleState:FSMState {
             case "关闭":
             case "再见":
             case "拜拜":
+            case "关机":
                 SwitchClosing();
                 break;
             case "超市":
                 break;
             case "巡逻":
+            case "看家":
+            case "出门":
+            case "看下家":
                 EnviromentManager.instance.ChangeDepthField(false);
                 fsm.PerformTransition(Transition.SeePlayer);
                 break;            

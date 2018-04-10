@@ -13,7 +13,6 @@ public class BarkState : FSMState {
     {
         AnimationExcuting.instance.anim.SetBool("Bark", true);
         AnimationExcuting.instance.anim.SetBool("Walk", false);
-      
     }
 
     public override void Reason(GameObject npc)

@@ -8,7 +8,7 @@ public class SliderMap : MonoBehaviour {
 	void Update () {
         if (GameObject.Find("MiniMapCamera")== null)
             return;
-#if UNITY_EDITOR
+
         if(Input.GetMouseButton(0))
         {
            
@@ -23,7 +23,7 @@ public class SliderMap : MonoBehaviour {
                 
             }
         }
-#endif
+
 
     }
 }
